@@ -1,0 +1,132 @@
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Image placeholder: shows the expected filename until the photo is added */
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: #E3E8F0;
+}
+
+.ph::before {
+  content: attr(data-name);
+  position: absolute;
+  inset: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed #9AA7BD;
+  border-radius: 4px;
+  color: #5A6882;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  word-break: break-all;
+}
+
+.ph > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal content */
+.modal-body h4 {
+  margin-top: 1.5rem;
+  font-weight: 700;
+  color: #0E2554;
+  font-size: 1rem;
+}
+
+.modal-body p {
+  margin-top: 0.75rem;
+  line-height: 1.7;
+  color: #374054;
+}
+
+.modal-body p.lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #18202F;
+  margin-top: 0;
+}
+
+.modal-body ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+  color: #374054;
+  line-height: 1.7;
+}
+
+.modal-body ul li::marker {
+  color: #1F6AD1;
+}
+
+.modal-body ol {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: decimal;
+  color: #374054;
+  line-height: 1.7;
+}
+
+.modal-body ol li::marker {
+  color: #1F6AD1;
+  font-weight: 700;
+}
+
+.modal-body li + li {
+  margin-top: 0.25rem;
+}
+
+.modal-body .note {
+  font-size: 0.85rem;
+  color: #5A6882;
+}
+
+dialog[open] {
+  animation: pop 180ms ease-out;
+}
+
+dialog[open]::backdrop {
+  animation: fade 180ms ease-out;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  dialog[open],
+  dialog[open]::backdrop {
+    animation: none;
+  }
+}
