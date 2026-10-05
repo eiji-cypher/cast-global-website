@@ -14,7 +14,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,7 +23,13 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          fontFamily: {
+            sans: ['"Freight Sans"', '"freight-sans-pro"', '"FreightSansPro"', '"Merriweather Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            body: ['"Freight Sans"', '"freight-sans-pro"', '"FreightSansPro"', '"Merriweather Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            serif: ['"Freight Text"', '"freight-text-pro"', '"FreightTextPro"', '"Lora"', 'Georgia', 'serif'],
+            display: ['"Freight Text"', '"freight-text-pro"', '"FreightTextPro"', '"Lora"', 'Georgia', 'serif'],
+            heading: ['"Freight Text"', '"freight-text-pro"', '"FreightTextPro"', '"Lora"', 'Georgia', 'serif']
+          },
           colors: {
             navy: '#0E2554',
             brand: { DEFAULT: '#1F6AD1', dark: '#1857B0' },
@@ -42,7 +49,7 @@
 <body class="bg-white text-ink antialiased">
 
   <!-- ============ TOP UTILITY HEADER ============ -->
-  <div class="bg-navy text-white text-xs py-2.5 px-5 lg:px-8 border-b border-slate-700">
+  <div class="hidden lg:block bg-navy text-white text-xs py-2.5 px-5 lg:px-8 border-b border-slate-700">
     <div
       class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 lg:gap-x-16 gap-y-2 text-center text-slate-200">
       <div class="flex items-center gap-1.5 cursor-default select-text">
@@ -62,6 +69,15 @@
         </svg>
         <span>castenterprisesllc@outlook.com</span>
       </a>
+      <button type="button" data-modal-open="modal-wechat"
+        class="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors cursor-pointer"
+        title="Connect on WeChat">
+        <svg class="h-3.5 w-3.5 shrink-0 fill-current" viewBox="0 0 24 24">
+          <path
+            d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+        </svg>
+        <span>WeChat: Paul Aliman</span>
+      </button>
       <div class="flex items-center gap-1.5">
         <svg class="h-3.5 w-3.5 text-brand shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           stroke-width="2">
@@ -121,19 +137,27 @@
     <section class="relative bg-slate-900 text-white overflow-hidden min-h-[600px] flex flex-col justify-between">
       <!-- Background Image with Balanced Overlay -->
       <div class="absolute inset-0 z-0">
-        <img src="images/section1cargo.png" alt="CAST Global Cargo &amp; Warehouse"
+        <img src="images/hero-local-shipping.jpg"
+          alt="CAST Global Shipping &amp; Freight Storefront &amp; Logistics Counter"
           class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/55 to-slate-950/25"></div>
       </div>
 
       <!-- Main Content -->
       <div class="relative z-10 mx-auto max-w-7xl px-5 py-16 sm:py-24 lg:px-8 w-full flex-grow flex items-center">
         <div class="max-w-2xl">
-          <!-- Logo Overlay -->
-          <div class="mb-6">
+          <!-- Logo Overlay & Badge -->
+          <div class="mb-4 flex flex-wrap items-center gap-3">
             <img src="images/CastGlobalShippingLogo.png" alt="CAST Global Shipping &amp; Freight"
               class="h-14 sm:h-18 w-auto object-contain brightness-0 invert drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]"
               onerror="this.outerHTML='<span class=\'text-2xl font-extrabold tracking-tight text-white\'>CAST <span class=\'font-semibold text-cyan-400\'>Global</span></span>'" />
+            <span
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30 backdrop-blur-md">
+              <svg class="w-3.5 h-3.5 fill-current text-emerald-400" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+              Selling to the U.S.? We Fulfill It.
+            </span>
           </div>
 
           <!-- Main Heading -->
@@ -143,18 +167,25 @@
             <span class="text-cyan-400 font-black">Made Easy.</span>
           </h1>
 
-          <!-- CTA Button -->
-          <div class="mt-7">
+          <!-- CTA Buttons -->
+          <div class="mt-7 flex flex-wrap items-center gap-4">
             <a href="#why"
               class="inline-block rounded bg-white px-7 py-3 text-sm font-extrabold text-brand uppercase tracking-wider shadow-lg hover:bg-slate-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-white">
               WHY CHOOSE CAST GLOBAL?
             </a>
+            <button type="button" data-modal-open="modal-fulfillment"
+              class="inline-flex items-center gap-2 rounded bg-emerald-600 px-6 py-3 text-sm font-extrabold text-white uppercase tracking-wider shadow-lg hover:bg-emerald-500 transition-colors cursor-pointer">
+              <span>China to U.S. 3PL</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
           </div>
 
           <!-- Subtitle -->
           <p class="mt-6 max-w-xl text-base sm:text-lg font-medium leading-relaxed text-slate-200 drop-shadow-sm">
-            For nearly 2 decades, we've helped individuals, families, and businesses move products across the country
-            and around the world.
+            Your trusted U.S. fulfillment &amp; logistics partner. From China &amp; global manufacturers to your
+            American customers — fast transloading, 3PL warehousing, and multi-carrier shipping.
           </p>
         </div>
       </div>
@@ -263,9 +294,14 @@
           </figure>
           <div class="p-6 flex flex-col flex-grow justify-between">
             <div>
+              <div
+                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-2">
+                <span>Selling to the U.S.? We Fulfill It</span>
+              </div>
               <h3 class="text-xl font-bold text-navy">Fulfillment and warehousing</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">Inventory storage, pick and pack, order
-                fulfillment, Amazon and Walmart support, and returns processing for growing businesses.</p>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">China-to-U.S. logistics, Amazon, Walmart, eBay
+                &amp; DTC order fulfillment, repacking, labeling, light refurbishment, and real-time inventory
+                management.</p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-100">
               <button type="button" data-modal-open="modal-fulfillment"
@@ -363,7 +399,7 @@
           <div class="lg:col-span-6">
             <figure
               class="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-slate-900/30 border border-white/20 p-2.5">
-              <img src="images/CastGlobalVan.jpg" alt="CAST Global Mobile Pickup Van"
+              <img src="images/CastGlobalVan.jpg" alt="CAST Global Mobile Package Pickup Service"
                 class="w-full h-full object-cover rounded-xl" />
             </figure>
           </div>
@@ -412,22 +448,33 @@
           <dl class="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2">
             <div>
               <dt class="font-bold text-navy">Experience</dt>
-              <dd class="mt-1 leading-relaxed text-slate-700">Serving Orange County since 2007 with professional
+              <dd class="mt-1 leading-relaxed text-slate-700">Serving Orange County since 2007 with professional 3PL and
                 logistics solutions.</dd>
             </div>
             <div>
-              <dt class="font-bold text-navy">Reliability</dt>
-              <dd class="mt-1 leading-relaxed text-slate-700">We handle your items with care and deliver on our
-                promises.</dd>
+              <dt class="font-bold text-navy">China to U.S. Bridge</dt>
+              <dd class="mt-1 leading-relaxed text-slate-700">Direct U.S. fulfillment partner for international
+                manufacturers and brands.</dd>
             </div>
             <div>
-              <dt class="font-bold text-navy">Fair pricing</dt>
-              <dd class="mt-1 leading-relaxed text-slate-700">Affordable rates with no hidden fees.</dd>
+              <dt class="font-bold text-navy">Strategic SoCal Location</dt>
+              <dd class="mt-1 leading-relaxed text-slate-700">Fast transloading from major ocean ports (LA &amp; Long
+                Beach) with next-day West Coast reach.</dd>
             </div>
             <div>
-              <dt class="font-bold text-navy">Personal service</dt>
-              <dd class="mt-1 leading-relaxed text-slate-700">We treat every customer like family and every shipment
-                like our own.</dd>
+              <dt class="font-bold text-navy">Repacking &amp; Refurbishment</dt>
+              <dd class="mt-1 leading-relaxed text-slate-700">Custom repackaging, FBA barcode labeling, and light
+                refurbishment support.</dd>
+            </div>
+            <div>
+              <dt class="font-bold text-navy">Marketplace &amp; DTC Integration</dt>
+              <dd class="mt-1 leading-relaxed text-slate-700">Accurate order fulfillment for Amazon, Walmart, eBay, and
+                Direct-to-Consumer stores.</dd>
+            </div>
+            <div>
+              <dt class="font-bold text-navy">Personal Service &amp; Communication</dt>
+              <dd class="mt-1 leading-relaxed text-slate-700">We treat every customer like family and focus on quality,
+                transparency, and long-term partnership.</dd>
             </div>
           </dl>
 
@@ -524,6 +571,19 @@
                   class="hover:underline" href="tel:+19494394927">Mobile and text (949) 439-4927</a></dd>
             </div>
             <div>
+              <dt class="font-bold">WeChat ID</dt>
+              <dd class="mt-1">
+                <button type="button" data-modal-open="modal-wechat"
+                  class="hover:underline flex items-center gap-1.5 text-emerald-300 font-medium">
+                  <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path
+                      d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+                  </svg>
+                  <span>Paul Aliman</span>
+                </button>
+              </dd>
+            </div>
+            <div>
               <dt class="font-bold">Email</dt>
               <dd class="mt-1"><a class="break-all hover:underline"
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=castenterprisesllc@outlook.com" target="_blank"
@@ -560,8 +620,10 @@
                   class="mt-1.5 w-full rounded border border-slate-300 bg-white px-3 py-2.5 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30">
                   <option>Package shipping</option>
                   <option>International shipping</option>
+                  <option>China to U.S. Fulfillment</option>
                   <option>Freight or pallets</option>
                   <option>Fulfillment or warehousing</option>
+                  <option>Repacking &amp; Refurbishment</option>
                   <option>Balikbayan box</option>
                   <option>Mobile pickup</option>
                   <option>Live Scan fingerprinting</option>
@@ -606,8 +668,17 @@
             Shipping, Freight, Fulfillment &amp; Mobile Logistics Made Easy
           </p>
 
-          <!-- Social Media Icons Row -->
+          <!-- Social Media & WeChat Icons Row -->
           <div class="mt-6 flex flex-wrap items-center gap-2">
+            <button type="button" data-modal-open="modal-wechat"
+              class="w-8 h-8 rounded bg-[#07C160] text-white flex items-center justify-center hover:scale-105 transition-all shadow-sm focus:outline-none cursor-pointer"
+              aria-label="WeChat" title="Connect on WeChat">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+              </svg>
+            </button>
+
             <button type="button" data-modal-open="modal-social" data-social-name="Instagram"
               class="w-8 h-8 rounded bg-[#e1306c] text-white flex items-center justify-center hover:scale-105 transition-all shadow-sm focus:outline-none"
               aria-label="Instagram">
@@ -674,7 +745,9 @@
                 class="hover:text-white transition-colors text-left">Freight &amp; Palletizing</button></li>
             <li><a href="#mobile" class="hover:text-white transition-colors">Mobile Logistics</a></li>
             <li><button type="button" data-modal-open="modal-fulfillment"
-                class="hover:text-white transition-colors text-left">Fulfillment &amp; Warehousing</button></li>
+                class="hover:text-white transition-colors text-left">China to U.S. 3PL &amp; Fulfillment</button></li>
+            <li><button type="button" data-modal-open="modal-wechat"
+                class="hover:text-white transition-colors text-left text-emerald-400">WeChat Contact</button></li>
             <li><button type="button" data-modal-open="modal-balikbayan"
                 class="hover:text-white transition-colors text-left">Balikbayan Box</button></li>
             <li><button type="button" data-modal-open="modal-livescan"
@@ -689,14 +762,15 @@
         <div class="flex flex-col text-left">
           <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-4">OUR SERVICES</h4>
           <ul class="space-y-2 text-xs text-slate-300 font-medium">
-            <li>Shipping (FedEx, DHL, USPS)</li>
+            <li>China to U.S. Fulfillment</li>
+            <li>Marketplace &amp; DTC (Amazon, Walmart, eBay)</li>
+            <li>Repacking &amp; Refurbishment Support</li>
+            <li>Port Transloading &amp; Storage</li>
+            <li>Shipping (FedEx, DHL, UPS, USPS)</li>
             <li>International Shipping</li>
             <li>Freight Shipping (LTL, FTL)</li>
-            <li>Palletizing</li>
-            <li>Warehousing</li>
-            <li>Pick &amp; Pack</li>
-            <li>Order Fulfillment</li>
-            <li>Returns Processing</li>
+            <li>Palletizing &amp; Warehousing</li>
+            <li>Pick &amp; Pack Order Fulfillment</li>
             <li>Mobile Pick up &amp; Packing</li>
           </ul>
         </div>
@@ -709,6 +783,16 @@
             <p>
               Office: <a href="tel:+19495831785" class="hover:text-white">949-583-1785</a><br />
               Mobile: <a href="tel:+19494394927" class="hover:text-white">949-439-4927</a>
+            </p>
+            <p>
+              <button type="button" data-modal-open="modal-wechat"
+                class="hover:text-emerald-300 text-emerald-400 font-semibold flex items-center gap-1.5 cursor-pointer">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+                </svg>
+                <span>WeChat: Paul Aliman</span>
+              </button>
             </p>
             <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=castenterprisesllc@outlook.com" target="_blank"
                 rel="noopener noreferrer" class="hover:text-white break-all">castenterprisesllc@outlook.com</a></p>
@@ -732,8 +816,12 @@
 
     <!-- Bottom copyright strip -->
     <div class="border-t border-white/10 bg-[#161616]">
-      <p class="mx-auto max-w-7xl px-5 py-4 text-center text-xs text-slate-400">&copy; 2026 CAST Enterprises LLC. CAST
-        Global Shipping &amp; Freight, serving Orange County since 2007. All rights reserved.</p>
+      <div class="mx-auto max-w-7xl px-5 py-3 text-center text-xs text-slate-400 space-y-1">
+        <p class="text-slate-300 font-semibold uppercase tracking-wider">WAREHOUSING &bull; FULFILLMENT &bull; REPACKING
+          &bull; SHIPPING &bull; RELIABLE PARTNER YOU CAN COUNT ON</p>
+        <p>&copy; 2026 CAST Enterprises LLC. CAST Global Shipping &amp; Freight, serving Orange County since 2007. All
+          rights reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -878,69 +966,120 @@
 
   <!-- Fulfillment & warehousing -->
   <dialog id="modal-fulfillment" aria-labelledby="modal-fulfillment-title"
-    class="m-auto w-[min(92vw,44rem)] rounded-md p-0 text-ink shadow-2xl backdrop:bg-navy/70">
+    class="m-auto w-[min(92vw,46rem)] rounded-md p-0 text-ink shadow-2xl backdrop:bg-navy/70">
     <div class="flex max-h-[88vh] flex-col">
       <header class="flex items-start justify-between gap-4 border-b border-slate-200 px-6 py-5">
         <div>
-          <h3 id="modal-fulfillment-title" class="text-xl font-bold text-navy">Fulfillment and warehousing</h3>
-          <p class="mt-1 text-sm text-slate-600">Third-party logistics (3PL) for growing businesses</p>
+          <div
+            class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-1">
+            <span>SELLING TO THE U.S.? WE FULFILL IT.</span>
+          </div>
+          <h3 id="modal-fulfillment-title" class="text-xl font-bold text-navy">Fulfillment, 3PL &amp; Warehousing
+            Services</h3>
+          <p class="mt-0.5 text-sm text-slate-600">Your U.S. Fulfillment Partner — From China to Your American Customers
+          </p>
         </div>
         <button type="button" data-modal-close aria-label="Close"
           class="rounded px-2.5 py-1 text-2xl leading-none text-slate-500 hover:bg-slate-100 hover:text-ink">&times;</button>
       </header>
       <div class="modal-body overflow-y-auto px-6 pb-6 pt-5">
-        <p class="lead">We warehouse your products, pick and pack items as orders come in, and ship them to your
-          customer on your behalf.</p>
-        <p>These services come at a cost, but they can lower your shipping costs, improve delivery times and improve
-          operating efficiency. That leaves you more time for new products, marketing and new markets.</p>
+        <p class="lead">We help manufacturers and brands simplify logistics, reduce costs, and deliver a better customer
+          experience in the U.S.</p>
 
-        <h4>What we handle</h4>
+        <div class="my-4 p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-sm space-y-2">
+          <div class="flex items-start gap-2.5 font-semibold text-navy">
+            <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Seamless bridge between China and the U.S.</span>
+          </div>
+          <div class="flex items-start gap-2.5 font-semibold text-navy">
+            <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Reliable, efficient and cost-effective 3PL solutions</span>
+          </div>
+          <div class="flex items-start gap-2.5 font-semibold text-navy">
+            <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Focused on quality, clear communication, and long-term partnership</span>
+          </div>
+        </div>
+
+        <h4>Our Fulfillment Services</h4>
+        <div class="mt-3 grid gap-3 sm:grid-cols-2 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-lg border border-slate-200 bg-white shadow-sm">
+            <strong class="block text-navy font-bold text-sm">1. Receiving &amp; Inventory Storage</strong>
+            <span class="text-slate-600 mt-1 block leading-relaxed">Secure receiving, quality inspection, and organized
+              warehouse storage.</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 bg-white shadow-sm">
+            <strong class="block text-navy font-bold text-sm">2. Pick, Pack &amp; Ship</strong>
+            <span class="text-slate-600 mt-1 block leading-relaxed">Accurate order fulfillment with careful, protective
+              packing.</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 bg-white shadow-sm">
+            <strong class="block text-navy font-bold text-sm">3. Marketplace &amp; DTC Fulfillment</strong>
+            <span class="text-slate-600 mt-1 block leading-relaxed">Support for Amazon, Walmart, eBay, and
+              Direct-to-Consumer (DTC).</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 bg-white shadow-sm">
+            <strong class="block text-navy font-bold text-sm">4. Repacking &amp; Refurbishment Support</strong>
+            <span class="text-slate-600 mt-1 block leading-relaxed">Repackaging, custom FBA labeling, fnsku, and light
+              product refurbishment.</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 bg-white shadow-sm">
+            <strong class="block text-navy font-bold text-sm">5. Multi-Carrier Shipping</strong>
+            <span class="text-slate-600 mt-1 block leading-relaxed">FedEx, DHL, UPS, USPS and commercial freight
+              partners.</span>
+          </div>
+          <div class="p-3.5 rounded-lg border border-slate-200 bg-white shadow-sm">
+            <strong class="block text-navy font-bold text-sm">6. Inventory &amp; Order Management</strong>
+            <span class="text-slate-600 mt-1 block leading-relaxed">Real-time tracking, inventory updates, and order
+              visibility.</span>
+          </div>
+        </div>
+
+        <h4>Why Partner with CAST?</h4>
         <ul>
-          <li>Complete 3PL solutions</li>
-          <li>Inventory storage</li>
-          <li>Pick and pack</li>
-          <li>Order fulfillment</li>
-          <li>Amazon and Walmart support</li>
-          <li>Returns processing</li>
+          <li><strong>Strategic Southern California Location:</strong> Located in Orange County, close to major ocean
+            ports and airports for fast distribution.</li>
+          <li><strong>Fast Transloading from Major Ports:</strong> Rapid container drayage, unloading, palletizing, and
+            transloading from Port of Los Angeles &amp; Port of Long Beach.</li>
+          <li><strong>Experienced 3PL &amp; Logistics Team:</strong> Skilled operational staff ensuring high accuracy
+            and zero hassle.</li>
+          <li><strong>Flexible Solutions for Growing Businesses:</strong> Custom solutions scaled to your volume without
+            high minimum commitments.</li>
         </ul>
 
-        <h4>How it works</h4>
+        <h4>How It Works</h4>
         <ol>
-          <li>Your products are purchased or manufactured and shipped to our warehouse.</li>
-          <li>Your store's inventory syncs with ours.</li>
-          <li>Your customer places and pays for an order.</li>
-          <li>We pick, pack and ship the order to your customer.</li>
+          <li>Your products are manufactured or purchased and shipped to our Southern California warehouse.</li>
+          <li>We receive, inspect, and organize your inventory.</li>
+          <li>Your online store or marketplace (Amazon, Walmart, eBay, Shopify) syncs orders.</li>
+          <li>We pick, pack, label, and ship orders directly to your American customers.</li>
         </ol>
 
-        <h4>Location matters</h4>
-        <p>It costs less, and takes less time, to ship to customers who are close to your warehouse. Say your warehouse
-          is in Boise, Idaho, but most of your customers are in California, Nevada and Arizona. A typical order might
-          cost $12 to ship to California and take five days by ground. From our Lake Forest, CA warehouse, that could
-          drop to around $6, with ground delivery as soon as the next day. That makes fast, free shipping possible while
-          still making a profit.</p>
-        <p class="note">Example figures only. Your actual rates depend on your products and destinations.</p>
-
-        <h4>Where the savings come from</h4>
-        <ul>
-          <li>Eliminate or reduce the cost of leasing a warehouse or storage unit</li>
-          <li>Reduce labor costs tied to order fulfillment, including salaries, insurance, benefits and taxes</li>
-          <li>Lower packing material costs</li>
-          <li>Pack and ship faster, so more economical shipping services can be used</li>
-          <li>Cut shipping costs through volume and warehouse location</li>
-        </ul>
-
-        <h4>Get your time back</h4>
-        <p>This matters most for small online shops. If you're writing content and also packing orders every afternoon,
-          handing off fulfillment frees that time for blog posts, articles, a video FAQ and everything else that grows
-          the business.</p>
+        <h4>Location Matters for Shipping Savings</h4>
+        <p>Shipping from our Lake Forest, CA warehouse enables ground delivery across California, Nevada, and Arizona as
+          fast as next day, with reduced shipping zones and costs across North America.</p>
       </div>
       <footer class="flex flex-wrap gap-3 border-t border-slate-200 bg-paper px-6 py-4">
-        <a href="#quote" data-quote-type="Fulfillment or warehousing" data-close-modal
-          class="rounded bg-brand px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-dark">Talk to us about
+        <a href="#quote" data-quote-type="China to U.S. Fulfillment" data-close-modal
+          class="rounded bg-brand px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-dark">Talk to us about U.S.
           fulfillment</a>
-        <a href="tel:+19495831785"
-          class="rounded border border-navy px-5 py-2.5 text-sm font-bold text-navy hover:bg-navy hover:text-white">Call
-          (949) 583-1785</a>
+        <button type="button" data-modal-open="modal-wechat" data-close-modal
+          class="rounded border border-emerald-600 bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-700 transition-colors flex items-center gap-2 cursor-pointer">
+          <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+            <path
+              d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+          </svg>
+          <span>Connect on WeChat</span>
+        </button>
       </footer>
     </div>
   </dialog>
@@ -971,8 +1110,6 @@
         </ul>
         <p>Whether you're sending a single package, managing business shipments or preparing freight for transport, our
           team comes to you and saves you time, effort and unnecessary trips.</p>
-        <h4>Rate</h4>
-        <p><strong>$1.39 per mile</strong>, plus the shipping cost (carrier published rate).</p>
       </div>
       <footer class="flex flex-wrap gap-3 border-t border-slate-200 bg-paper px-6 py-4">
         <a href="#quote" data-quote-type="Mobile pickup" data-close-modal
@@ -1106,6 +1243,126 @@
           class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors">
           Got It
         </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- WeChat Contact Modal -->
+  <dialog id="modal-wechat" aria-labelledby="modal-wechat-title"
+    class="m-auto w-[min(92vw,30rem)] rounded-2xl p-0 text-ink shadow-2xl backdrop:bg-slate-950/80">
+    <div class="flex flex-col bg-white rounded-2xl overflow-hidden">
+      <header
+        class="flex items-center justify-between gap-4 border-b border-slate-100 bg-slate-900 text-white px-6 py-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-[#07C160] flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+              <path
+                d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 id="modal-wechat-title" class="text-lg font-bold text-white leading-tight">Connect on WeChat</h3>
+            <p class="text-xs text-slate-300">Paul Aliman — Founder &amp; Owner</p>
+          </div>
+        </div>
+        <button type="button" data-modal-close aria-label="Close"
+          class="rounded-lg p-1 text-2xl leading-none text-slate-400 hover:bg-slate-800 hover:text-white transition-colors">&times;</button>
+      </header>
+
+      <div class="p-6 text-center">
+        <!-- WeChat QR Code Card -->
+        <div class="mx-auto w-56 p-4 bg-slate-50 border-2 border-emerald-500/30 rounded-2xl shadow-md">
+          <div class="bg-white p-3 rounded-xl border border-slate-200">
+            <div
+              class="aspect-square bg-emerald-50 rounded-lg border border-emerald-100 flex flex-col items-center justify-center p-3 relative overflow-hidden group">
+              <!-- Visual WeChat QR Code Representation -->
+              <div
+                class="w-full h-full bg-white p-2 rounded flex flex-col justify-between items-center shadow-inner relative">
+                <div class="w-full h-full grid grid-cols-5 gap-1 p-1 bg-slate-900 rounded">
+                  <div class="bg-white rounded-sm p-0.5">
+                    <div class="w-full h-full bg-slate-900 rounded-sm p-0.5">
+                      <div class="w-full h-full bg-white"></div>
+                    </div>
+                  </div>
+                  <div class="bg-white/20 rounded-sm"></div>
+                  <div class="bg-white/80 rounded-sm"></div>
+                  <div class="bg-white/30 rounded-sm"></div>
+                  <div class="bg-white rounded-sm p-0.5">
+                    <div class="w-full h-full bg-slate-900 rounded-sm p-0.5">
+                      <div class="w-full h-full bg-white"></div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white/40 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-white/70 rounded-sm"></div>
+                  <div class="bg-white/20 rounded-sm"></div>
+                  <div class="bg-white/60 rounded-sm"></div>
+
+                  <div class="bg-white/80 rounded-sm"></div>
+                  <div class="bg-white/30 rounded-sm"></div>
+                  <div class="bg-[#07C160] rounded flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 fill-current text-white" viewBox="0 0 24 24">
+                      <path
+                        d="M8.5 13.5c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zm6.5 0c-.5 0-1-.4-1-.9s.4-1 1-1 1 .4 1 1-.5.9-1 .9zM12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7L5 20.5l3.8-1.9c1 .3 2.1.4 3.2.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2z" />
+                    </svg>
+                  </div>
+                  <div class="bg-white/90 rounded-sm"></div>
+                  <div class="bg-white/40 rounded-sm"></div>
+
+                  <div class="bg-white/50 rounded-sm"></div>
+                  <div class="bg-white/80 rounded-sm"></div>
+                  <div class="bg-white/20 rounded-sm"></div>
+                  <div class="bg-emerald-400 rounded-sm"></div>
+                  <div class="bg-white/70 rounded-sm"></div>
+
+                  <div class="bg-white rounded-sm p-0.5">
+                    <div class="w-full h-full bg-slate-900 rounded-sm p-0.5">
+                      <div class="w-full h-full bg-white"></div>
+                    </div>
+                  </div>
+                  <div class="bg-white/60 rounded-sm"></div>
+                  <div class="bg-white/30 rounded-sm"></div>
+                  <div class="bg-white/80 rounded-sm"></div>
+                  <div class="bg-white/90 rounded-sm"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-3 text-xs font-bold text-slate-800"></p>
+          <p class="text-[11px] text-slate-500 mt-0.5">WeChat ID: Paul Aliman</p>
+        </div>
+
+        <div class="mt-5 space-y-2 text-left text-xs text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div class="flex items-center justify-between border-b border-slate-200/80 pb-2">
+            <span class="font-semibold text-slate-700">China &amp; U.S. Fulfillment:</span>
+            <span class="font-bold text-emerald-700">Active Bridge</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-slate-200/80 pb-2">
+            <span class="font-semibold text-slate-700">Office Line:</span>
+            <a href="tel:+19495831785" class="font-bold text-brand hover:underline">(949) 583-1785</a>
+          </div>
+          <div class="flex items-center justify-between border-b border-slate-200/80 pb-2">
+            <span class="font-semibold text-slate-700">Mobile / Direct Call:</span>
+            <a href="tel:+19494394927" class="font-bold text-brand hover:underline">(949) 439-4927</a>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-slate-700">Email:</span>
+            <a href="mailto:castenterprisesllc@outlook.com"
+              class="font-bold text-brand hover:underline">castenterprisesllc@outlook.com</a>
+          </div>
+        </div>
+
+        <div class="mt-5 flex gap-3">
+          <a href="#quote" data-quote-type="China to U.S. Fulfillment" data-close-modal
+            class="w-full rounded-xl bg-navy px-4 py-2.5 text-xs font-bold text-white hover:bg-brand transition-colors text-center">
+            Request Quote
+          </a>
+          <button type="button" data-modal-close
+            class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors">
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </dialog>
